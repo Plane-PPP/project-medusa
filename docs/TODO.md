@@ -16,13 +16,16 @@
 - [x] Старт `out10.odm` у площадки Town Portal (3114, −11055, 513) через строку 2 `continent_settings`
 - [x] Героиня: строка 79 `character_data`, кукла `pc02*`, Sorcerer, голос 1; 56 TEMP-кадров; иконки ruleset в движке
 - [x] Тесты: разбор карточек, сломанный пакет, иконки ruleset, состав пакета и таблиц, сохранение героини
-- [x] Windows CI `medusa-windows.yml`, патч `Project-Medusa-Alpha-0.1-Windows-Patch.zip`
+- [x] Windows CI `medusa-windows.yml`, патч `Project-Medusa-Alpha-0.1-Windows-Patch.zip`, prerelease `medusa-alpha-0.1`
 - [ ] **Игровая проверка у пользователя** (чек-лист в `README-MEDUSA-RU.txt` патча): вкладки 16:9/4:3, карточка,
       создание партии, старт, движение, сохранение/загрузка, кукла и экипировка, Standard и MAW без изменений
 - [ ] Длинное тире в «Project Medusa — Prologue» в шрифте меню (если не рисуется — заменить в `ruleset.yml`)
 - [ ] Поведение стражи Нигона (Water Warlock, группа 55) к партии 1 уровня
 
 ## Alpha 0.2 — кандидаты
+
+- [ ] Кадры героини по [ТЗ](design/portrait-generation-brief.md) и [56 промптам](design/portrait-prompts.md)
+- [ ] `finish_patch.py`: пересчитывать SHA256 в отчёте `*.json` после добавления README Medusa
 
 - [ ] Финальные 56 кадров героини → `tools/import_portraits.py` (формат: [portraits.md](design/portraits.md))
 - [ ] Своя картинка куклы `med01bod.png` 166×594 (голова Medusa на кукле) → колонка 9 в `character_data.append.txt`

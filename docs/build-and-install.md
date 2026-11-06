@@ -84,3 +84,11 @@ cd ../openyamm-medusa && safe-heavy-run run -- ./build/tests/openyamm_unit_tests
   (`finish_patch.py` дописывает файлы в ZIP после отчёта) — исправить в следующей итерации.
 - Скачивание артефакта на VM: канал к хранилищу Azure очень медленный (~5 КБ/с); помогает
   `curl --http1.1 -C -` по подписанной ссылке (токен в хранилище не передавать).
+
+### Prerelease (2026-11-06)
+
+- https://github.com/Plane-PPP/openyamm/releases/tag/medusa-alpha-0.1 — тег `medusa-alpha-0.1` на `2c1ae60`,
+  prerelease, «не проверено в игре».
+- Файл `Project-Medusa-Alpha-0.1-Windows-Patch.zip`: 22 955 695 байт,
+  SHA256 `138762c022eba47cc402d00ea7d58fec33164c228ecc64ee8eafff418594803e`. **[проверено]** на VM: ZIP цел,
+  SHA256 всех 119 файлов программы и пака `engine.rulesets` совпадают с манифестом обновления.
