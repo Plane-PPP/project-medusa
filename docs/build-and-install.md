@@ -60,3 +60,27 @@ cd ../openyamm-medusa && safe-heavy-run run -- ./build/tests/openyamm_unit_tests
 ```
 
 Перед тестами пакета: `tools/link-dev.sh` (симлинк). Тесты установленного пакета без него пропускаются.
+
+## Опубликовано (2026-11-06)
+
+| Что | Ссылка / SHA |
+|---|---|
+| Контент | https://github.com/Plane-PPP/project-medusa — `main` |
+| Движок | https://github.com/Plane-PPP/openyamm/tree/feature/project-medusa — `2c1ae60` (первый коммит Medusa поверх `0c172ed`) |
+| Закреплённый контент в CI | `887b0fd46d9ceba89fdd37f626a08c7147b980fe` (`packaging/medusa/content.json`) |
+| Первый Windows CI | https://github.com/Plane-PPP/openyamm/actions/runs/42184813008 |
+
+### Результат первого CI (run 42184813008, движок `2c1ae60`) — **[проверено] CI**
+
+- Все шаги успешны: Windows-сборка, тесты Medusa/ruleset/Minotaur и runtime-тесты создания партии, упаковка,
+  проверка тонкого архива, проверка состава патча (в паке `engine.rulesets` есть `medusa/ruleset.yml`, таблицы,
+  `med01-01/56.png` и `maw/ruleset.yml`; в ZIP — `openyamm.exe` и README).
+- Артефакт `Project-Medusa-Alpha-0.1-Windows-Patch.zip`, 22 955 695 байт.
+- Версия после установки: `minotaur-1.20-medusa-0.1-2c1ae605467a-1-1`.
+- Изменён 1 пак (`engine.rulesets-27bc4bdd4ec0da44.zip`, 186 411 байт), переиспользовано 165 паков (5,8 ГБ).
+- Базис новой версии (`minotaur-baseline.json`) — в артефакте `project-medusa-metadata-2c1ae60…`; положить его в
+  `packaging/minotaur/bases/` ветки Medusa после успешной установки у пользователя.
+- Известная мелочь: SHA256 в `Project-Medusa-Alpha-0.1-Windows-Patch.json` посчитан до добавления README Medusa
+  (`finish_patch.py` дописывает файлы в ZIP после отчёта) — исправить в следующей итерации.
+- Скачивание артефакта на VM: канал к хранилищу Azure очень медленный (~5 КБ/с); помогает
+  `curl --http1.1 -C -` по подписанной ссылке (токен в хранилище не передавать).
