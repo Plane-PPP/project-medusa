@@ -1,5 +1,7 @@
 # Портреты героини: техническая спецификация
 
+ТЗ для генерации: [portrait-generation-brief.md](portrait-generation-brief.md).
+
 Основание: [аудит](../research/medusa-engine-audit.md), раздел 4. Код — OpenYAMM `0c172ed`.
 
 ## Импорт (готово в Alpha 0.1)

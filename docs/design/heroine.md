@@ -27,16 +27,7 @@
 | Голос | 1 (голос `pc02`) | — |
 | Класс по умолчанию | 42 Sorcerer (можно сменить при создании) | — |
 
-## Промпт для эталона (внешний генератор)
+## Промпт и формат
 
-> Bust portrait of a young adult half-medusa woman, mostly human face, attractive and expressive, faint green tint to
-> the skin, small patches of fine scales at the temples, cheekbones and neck, hair partly braided with five living
-> slender snakes (two at each temple, one above the forehead), amber eyes, calm neutral expression, facing the viewer
-> almost frontally, warm soft key light from the left, dark neutral background, painterly classic fantasy RPG portrait
-> style of late-1990s computer role-playing games, head and shoulders, centered, no text, no frame.
-
-Отрицательный промпт: full snake body, reptile face, monster, extra limbs, horror, gore, text, watermark, frame,
-photorealistic.
-
-Технические требования к эталону: ≥ 944×1264, соотношение 59:79, голова занимает около 60 % высоты, глаза примерно
-на 40 % от верха. Кадры B и C делаются от этого изображения (img2img или inpaint), а не с нуля.
+Актуальное ТЗ для генерации (формат, кадрирование, все 56 кадров, промпты): [portrait-generation-brief.md](portrait-generation-brief.md).
+Прежний вариант «погрудный портрет на тёмном фоне» неверен: кадры игры — голова без шеи на прозрачном фоне.
