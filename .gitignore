@@ -1,0 +1,19 @@
+# Generated and local files
+/build/
+/out/
+*.blv.tmp
+*.blend1
+*.blend2
+__pycache__/
+*.pyc
+.DS_Store
+
+# Cooked runtime files are rebuilt from sources
+*.oytex
+
+# Never commit original game data or third-party mod data
+/reference/
+*.lod
+*.LOD
+*.snd
+*.vid

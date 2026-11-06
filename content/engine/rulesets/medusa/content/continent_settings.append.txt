@@ -1,0 +1,1 @@
+5	Medusa Prologue					x	0.9225	1.06	losegame		out15.odm	0	0	0	0	out15.odm	0	0	0	0	plansky3, plansky1, sky06, sky02, sky03, stormclds, stormclds	loading1.pcx,loading2.pcx,loading3.pcx,loading4.pcx,loading5.pcx

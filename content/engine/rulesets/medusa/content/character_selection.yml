@@ -1,0 +1,101 @@
+# DRAFT, not installed or tested. Replaces engine/data_tables/character_selection.yml in Medusa games.
+# Copied from OpenYAMM 0c172ed with new_game_continents reduced to the single Medusa start (id 5).
+version: 1
+race_class_availability:
+  - race: Human
+    race_id: 0
+    classes:
+      - Archer
+      - Cleric
+      - Druid
+      - Knight
+      - Monk
+      - Paladin
+      - Ranger
+      - Thief
+      - Sorcerer
+      - Necromancer
+  - race: Vampire
+    race_id: 1
+    classes:
+      - Vampire
+  - race: DarkElf
+    race_id: 2
+    classes:
+      - Archer
+      - Cleric
+      - DarkElf
+      - Druid
+      - Knight
+      - Ranger
+      - Thief
+      - Sorcerer
+  - race: Minotaur
+    race_id: 3
+    classes:
+      - Cleric
+      - Druid
+      - Knight
+      - Minotaur
+      - Monk
+      - Paladin
+      - Ranger
+      - Sorcerer
+  - race: Troll
+    race_id: 4
+    classes:
+      - Troll
+  - race: Dragon
+    race_id: 5
+    classes:
+      - Dragon
+  - race: Undead
+    race_id: 6
+    classes: []
+  - race: Elf
+    race_id: 7
+    classes:
+      - Archer
+      - Cleric
+      - Druid
+      - Knight
+      - Monk
+      - Paladin
+      - Ranger
+      - Thief
+      - Sorcerer
+  - race: Goblin
+    race_id: 8
+    classes:
+      - Archer
+      - Cleric
+      - Druid
+      - Knight
+      - Monk
+      - Paladin
+      - Ranger
+      - Thief
+      - Sorcerer
+  - race: Dwarf
+    race_id: 9
+    classes:
+      - Archer
+      - Cleric
+      - Druid
+      - Knight
+      - Monk
+      - Paladin
+      - Ranger
+      - Thief
+      - Sorcerer
+  - race: Zombie
+    race_id: 10
+    classes: []
+
+new_game_continents:
+  - id: 5
+    key: medusa_prologue
+    name: Prologue
+    available_class_ids: [0, 4, 12, 16, 22, 26, 30, 34, 42]
+    available_race_ids: [0]
+    portrait_exceptions: []

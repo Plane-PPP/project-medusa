@@ -1,0 +1,31 @@
+# Project Medusa (DRAFT, not installed or tested).
+# A content package on the Standard rules: MawRules are created only for the id "maw" (game/app/GameSession.cpp:363),
+# so Medusa games keep Standard and Minotaur Rebalance behaviour. The New Game start card needs the engine change
+# described in docs/research/medusa-engine-audit.md §9; without it the three continent cards would show and do nothing.
+id: medusa
+name: Project Medusa
+description: >-
+  Project Medusa — An Original Adventure.
+contentSchemaVersion: 1
+credits:
+  - Project Medusa team
+idRanges:
+  qbits: {begin: 20000, end: 20999}
+  npc_topics: {begin: 20000, end: 20999}
+  portraits: {begin: 79, end: 89}
+rulesPanel:
+  title: Project Medusa
+  subtitle: An Original Adventure
+  summary: Project Medusa — An Original Adventure.
+tables:
+  # One start, "Prologue" (continent id 5).
+  - table: character_selection.yml
+    mode: replace
+    path: content/character_selection.yml
+  # Start map of continent 5: out15.odm at 0,0,0 (coordinates NOT verified).
+  - table: continent_settings.txt
+    mode: override
+    path: content/continent_settings.patch.txt
+    append: content/continent_settings.append.txt
+    keyColumn: 0
+    headerRow: 0
