@@ -26,7 +26,6 @@
 
 - [ ] Кадры героини по [ТЗ](design/portrait-generation-brief.md) и [56 промптам](design/portrait-prompts.md)
 - [ ] `finish_patch.py`: пересчитывать SHA256 в отчёте `*.json` после добавления README Medusa
-
 - [ ] Финальные 56 кадров героини → `tools/import_portraits.py` (формат: [portraits.md](design/portraits.md))
 - [ ] Своя картинка куклы `med01bod.png` 166×594 (голова Medusa на кукле) → колонка 9 в `character_data.append.txt`
 - [ ] Своя иллюстрация карточки 120×120 (`illustration` в `ruleset.yml`), вместо карты MM7 `out10`
