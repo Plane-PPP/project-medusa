@@ -1,11 +1,12 @@
-# Project Medusa (DRAFT, not installed or tested).
-# A content package on the Standard rules: MawRules are created only for the id "maw" (game/app/GameSession.cpp:363),
-# so Medusa games keep Standard and Minotaur Rebalance behaviour. The New Game start card needs the engine change
-# described in docs/research/medusa-engine-audit.md §9; without it the three continent cards would show and do nothing.
+# Project Medusa — an original adventure on OpenYAMM (https://github.com/Plane-PPP/project-medusa).
+# Rules: Standard MMMerge with Minotaur Rebalance. MAW's rules are created only for the id "maw"
+# (game/app/GameSession.cpp), so nothing of MAW applies here.
+# Start: Mount Nighon (MM7, out10.odm) at the original Town Portal landing. The map, its events and pictures are read
+# from the installed game; this package copies none of them.
 id: medusa
 name: Project Medusa
 description: >-
-  Project Medusa — An Original Adventure.
+  Project Medusa: an original adventure. Prologue in Mount Nighon.
 contentSchemaVersion: 1
 credits:
   - Project Medusa team
@@ -16,16 +17,29 @@ idRanges:
 rulesPanel:
   title: Project Medusa
   subtitle: An Original Adventure
-  summary: Project Medusa — An Original Adventure.
+  summary: "Alpha 0.1: Standard rules, prologue in Mount Nighon."
+newGame:
+  starts:
+    # Antagarich (continent 2): MM7's classes and races, skies, loading pictures and death video. The start map comes
+    # from continent_settings.txt row 2, which this package points at Mount Nighon.
+    - continent: antagarich
+      title: Mount Nighon
+      subtitle: Project Medusa — Prologue
+      start: Begin in Mount Nighon
+      # Temporary: MM7's own map picture of Mount Nighon (worlds/mm7/icons_x2/out10.bmp), read by name.
+      illustration: out10
 tables:
-  # One start, "Prologue" (continent id 5).
-  - table: character_selection.yml
-    mode: replace
-    path: content/character_selection.yml
-  # Start map of continent 5: out15.odm at 0,0,0 (coordinates NOT verified).
+  # Antagarich starts, and a defeated party wakes, at the Town Portal landing in Mount Nighon (town_portal_switch.txt,
+  # "Nighon": map 69 = out10.odm, 3114, -11055, 513, direction 0).
   - table: continent_settings.txt
     mode: override
     path: content/continent_settings.patch.txt
-    append: content/continent_settings.append.txt
+    keyColumn: 0
+    headerRow: 0
+  # The Medusa heroine, portrait 79 (faces med01-01 ... med01-56 in icons_x2/ of this package).
+  - table: character_data.txt
+    mode: override
+    path: content/character_data.patch.txt
+    append: content/character_data.append.txt
     keyColumn: 0
     headerRow: 0
