@@ -24,7 +24,7 @@ Medusa — отдельный ruleset `medusa` (вкладка New Game). Пра
 | `content/continent_settings.patch.txt` | Строка 2 (Antagarich): Death map 1 и 2 → `out10.odm` 3114, −11055, 513, dir 0 |
 | `content/character_data.patch.txt` | Пустой патч (заголовок): режим override требует путь |
 | `content/character_data.append.txt` | Строка 79: героиня, кукла типа 1 (`pc02*`), класс 42 Sorcerer, голос 1, раса 0, лица `med01-` |
-| `icons_x2/med01-01.png … med01-56.png` | Кадры лица 118×158 RGBA. Сейчас **TEMP-заглушки** (`tools/make_placeholder_portraits.py`) |
+| `icons_x2/med01-01.png … med01-56.png` | Кадры лица 118×158 RGBA. С Alpha 0.2 — черновой набор героини, см. [portraits.md](design/portraits.md) |
 
 `character_selection.yml` не заменяется: карточка Medusa открывает штатное создание партии Antagarich (континент 2,
 классы и расы MM7). Небо, экраны загрузки, видео поражения — тоже Antagarich.
