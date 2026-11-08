@@ -29,6 +29,20 @@ PACKAGE_ICONS = Path(__file__).resolve().parent.parent / "content/engine/ruleset
 NAME = re.compile(r"^(?:med01-)?(\d{2})\.(png|webp|jpg|jpeg)$", re.IGNORECASE)
 
 
+KEY_COLOURS = {(255, 0, 255), (0, 255, 255)}
+
+
+def clear_key_colours(frame):
+    """The HUD makes pure #FF00FF and #00FFFF transparent. Lanczos leaves them in near-transparent edge pixels
+    (alpha 1-2); clear those here so the files carry none, as the brief requires."""
+    pixels = frame.load()
+    for y in range(frame.height):
+        for x in range(frame.width):
+            red, green, blue, _ = pixels[x, y]
+            if (red, green, blue) in KEY_COLOURS:
+                pixels[x, y] = (0, 0, 0, 0)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("source", type=Path)
@@ -68,6 +82,7 @@ def main():
             frame = image.convert("RGBA")
             if frame.size != (WIDTH, HEIGHT):
                 frame = frame.resize((WIDTH, HEIGHT), Image.LANCZOS)
+            clear_key_colours(frame)
             args.out.mkdir(parents=True, exist_ok=True)
             frame.save(args.out / f"{PREFIX}{number:02d}.png", optimize=True)
     if len(sizes) > 1:
