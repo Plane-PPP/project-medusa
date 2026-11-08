@@ -14,9 +14,9 @@
 |---|---|
 | `content/engine/rulesets/medusa/` | Ruleset-пакет Medusa для OpenYAMM: `ruleset.yml`, таблицы, кадры портрета `icons_x2/` |
 | `maps/` | Исходники карт: `.blend`, `.glb`, `geometry.yml`, `scene.yml`, Lua |
-| `portraits/` | Исходники портретов высокого разрешения |
+| `portraits/` | Исходники портретов высокого разрешения; `templates/` — окно и схема кадра; `reference/` — оригиналы MM, локально, не коммитятся |
 | `scenes/`, `assets/`, `scripts/` | Сцены, прочие ресурсы, игровые скрипты |
-| `tools/` | `link-dev.sh` (связь с движком), `make_placeholder_portraits.py`, `import_portraits.py` |
+| `tools/` | `link-dev.sh` (связь с движком), `make_placeholder_portraits.py`, `import_portraits.py`, `portrait_kit.py` (сборка и проверка кадров портрета) |
 | `docs/` | [TODO](docs/TODO.md), [решения](docs/DECISIONS.md), [интеграция](docs/integration.md), [сборка и установка](docs/build-and-install.md), `design/`, `research/` |
 
 Начать: [CLAUDE.md](CLAUDE.md).

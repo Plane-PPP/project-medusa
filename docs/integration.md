@@ -26,6 +26,12 @@ Medusa — отдельный ruleset `medusa` (вкладка New Game). Пра
 | `content/character_data.append.txt` | Строка 79: героиня, кукла типа 1 (`pc02*`), класс 42 Sorcerer, голос 1, раса 0, лица `med01-` |
 | `icons_x2/med01-01.png … med01-56.png` | Кадры лица 118×158 RGBA. С Alpha 0.2 — черновой набор героини, см. [portraits.md](design/portraits.md) |
 
+Иконки пакета подключает `GameApplication::activateRuleset` → `AssetFileSystem::setRulesetIconRoot`; HUD, экран
+создания партии и персонажа ищут кадры в `Data/icons` по имени (`med01-NN`, без атласа `faces_med01`). Корень иконок
+ruleset переживает смену активного мира (`switchActiveWorld`, загрузка карты другого мира) с Alpha 0.2.1; до неё он
+стирался, и HUD на Mount Nighon (мир mm7) показывал пустую рамку. **[проверено]** тестом `AssetFileSystem keeps the
+active ruleset's icons when a map switches the active world`; в игре — **[игра]**.
+
 `character_selection.yml` не заменяется: карточка Medusa открывает штатное создание партии Antagarich (континент 2,
 классы и расы MM7). Небо, экраны загрузки, видео поражения — тоже Antagarich.
 
