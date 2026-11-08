@@ -58,7 +58,7 @@
 | Кончик носа | y = 800 (63 %), на оси x = 472 | ±40 |
 | Линия рта | y = 935 (74 %) | ±40 |
 | Подбородок | y = 1110 (88 %) | ±45 |
-| Шея | от подбородка вниз, сужается вместе с низом окна; уходит в прозрачность по краю окна | без плеч и ключиц, без горизонтального среза |
+| Шея | от подбородка вниз до самого низа кадра; срезает её только низ окна (своего края у шеи нет) | без плеч и ключиц, без горизонтального среза; зазор под шеей ≤ 12 px |
 | Волосы и змеи | заполняют окно до краёв (голова занимает 90–100 % окна); всё, что за окном, обрезается | — |
 
 Оригиналы pc02 (зрачки 612, нос 800, рот 940, подбородок 1120) укладываются в эти числа: это проверено.
@@ -79,7 +79,8 @@ just below the jaw on both sides and frames the neck, filling the space beside t
 Snakes: exactly FIVE slender living snakes grow from the hair: two at the left temple, two at the right temple, one
 coiled on the crown. Emerald green with a pale gold belly and a thin black stripe, small heads, closed mouths.
 They stay inside the head outline and never cover the eyes or the face. Same count and placement every time.
-Short neck visible under the chin. No shoulders, no collarbones, no clothing, no jewellery.
+Short neck visible under the chin; the neck continues straight down and is cut off by the bottom edge of the
+image (do not round it off or fade it out). No shoulders, no collarbones, no clothing, no jewellery.
 ```
 
 ```
@@ -129,7 +130,8 @@ Never use pure magenta #FF00FF or pure cyan #00FFFF.
 
 - 56 файлов, 944×1264, RGBA; нет пикселей чистых `#FF00FF` и `#00FFFF`.
 - Ничего непрозрачного за окном; низ — не прямой срез; голова заполняет окно.
-- Мастер: координаты из `landmarks.json` в допусках раздела 2; яркость головы 95–140 (FAIL) или 100–125 (норма).
+- Мастер: координаты из `landmarks.json` в допусках раздела 2; яркость головы 80–150 (иначе FAIL), норма 95–125
+  (оригиналы 77–117); шея или волосы доходят до низа кадра (зазор > 12 px — WARN).
 - Кадры выражений: волосы, змеи и контур совпадают с 01 (средняя разница ≤ 2,5), лицо при этом изменилось.
 - Все кадры, кроме 35/36: IoU силуэта с 01 ≥ 0,90; площадь ±6 % (поза ±8 %); тон ±10 (поза и урон ±22).
 - 35/36: окно опущено на 9–17 % и 20–34 % (как в оригиналах).
@@ -246,7 +248,7 @@ Do not: [NEGATIVE]
 
 | № | Движок | Вид | CHANGE (EN, в промпт) | Проверить |
 |---|---|---|---|---|
-| 01 | Normal | master | (промпт M) | Раздел 2; яркость 100–125 |
+| 01 | Normal | master | (промпт M) | Раздел 2; яркость 95–125; шея до низа кадра |
 | 02 | Cursed | face | gloomy cursed look: heavy half-lowered eyelids, eyes looking down, slight frown, faint grey shadows under the eyes | Взгляд вниз читается |
 | 03 | Weak | face | exhausted and weak: eyelids almost closed, sad drooping brows, mouth slightly open and slack | — |
 | 04 | Sleep | pose | asleep: eyes fully closed, face relaxed, lips slightly parted; head rolled about 15° so the crown leans to the LEFT side of the image, chin slightly down; snakes asleep on the hair | Как pc02-04 |

@@ -541,8 +541,12 @@ def cmd_qa(args):
     rep.check(0.80 <= m["area"] / area_oval <= 1.02,
               f"01: head fills {m['area'] / area_oval:.0%} of the oval; originals fill 90-100 % (hair to the edge)",
               warn_only=m["area"] / area_oval > 0.72)
-    rep.check(95 <= m["luma"] <= 140, f"01: mean head brightness {m['luma']:.0f}; originals 80-120, aim 100-125 "
-              "(too dark reads as a black blob at 118x158)", warn_only=85 <= m["luma"] <= 150)
+    rep.check(95 <= m["luma"] <= 130, f"01: mean head brightness {m['luma']:.0f}; originals 77-117 (pc12 77, pc02 117), "
+              "aim 95-125 (too dark reads as a blob at 118x158)", warn_only=80 <= m["luma"] <= 150)
+    gap = H - 1 - int(np.nonzero((master[..., 3] > 0.5).any(1))[0].max())
+    rep.check(gap <= 12, f"01: the head/neck ends {gap} px above the bottom edge; in the originals the neck or hair "
+              "reaches the bottom of the oval (a gap shows as an empty curve under the neck in the HUD)",
+              warn_only=True)
     lm_path = src / "landmarks.json"
     lm = None
     if lm_path.exists():
