@@ -1,6 +1,6 @@
 # Портреты героини: техническая спецификация
 
-ТЗ для генерации: [v2 для Codex](portrait-generation-brief-v2.md) (действующее); [v1](portrait-generation-brief.md) —
+ТЗ для генерации: [v3](portrait-generation-brief-v3.md) (генерация по v2 и пакет для импорта в игре); [v2 для Codex](portrait-generation-brief-v2.md); [v1](portrait-generation-brief.md) —
 для веб-ChatGPT, кадрирование и направления в нём устарели.
 
 Основание: [аудит](../research/medusa-engine-audit.md), раздел 4. Код — OpenYAMM `0c172ed`.
