@@ -48,8 +48,10 @@
       ветка движка `feature/custom-portrait-import`)
 - [x] Проверка импорта портрета на Windows (тестовая сборка поверх Minotaur 1.21, 2026-11-11): пакет Medusa
       импортируется, портрет и анимация в игре работают. Остался PR в `pjasicek/openyamm`
-- [ ] **Кукла героини** по [ТЗ куклы v1](design/doll-generation-brief-v1.md): на кукле инвентаря и превью создания
-      партии пока лицо `pc02`. Генерация (Codex) → доработка импорта (`doll:` в `portrait.yml`)
+- [x] Импорт куклы в движке (`doll/body.png`, `doll/hand_*.png` в пакете; ветка `feature/custom-portrait-import`),
+      тестовый пакет `portraits/packages/medusa_dolltest.zip` с условной куклой
+- [ ] **Кукла героини** по [ТЗ куклы v1](design/doll-generation-brief-v1.md) (Codex), затем пакет Medusa с куклой и
+      проверка на Windows: экран персонажа, превью создания партии, со снаряжением и шлемом
 - [ ] `finish_patch.py`: пересчитывать SHA256 в отчёте `*.json` после добавления README Medusa
 - [ ] Своя картинка куклы `med01bod.png` 166×594 (голова Medusa на кукле) → колонка 9 в `character_data.append.txt`
 - [ ] Своя иллюстрация карточки 120×120 (`illustration` в `ruleset.yml`), вместо карты MM7 `out10`
